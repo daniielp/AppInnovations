@@ -1,0 +1,29 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import LoadScripts from "../components/LoadScripts.astro";
+
+const { title, description} = Astro.props;
+
+export interface Props {
+  title: string
+  description: string
+  image?: string
+}
+---
+
+<!doctype html>
+<html lang="da" class="h-full antialiased scroll-smooth">
+  <head>
+    <BaseHead title={title} description={description}  />
+    <LoadScripts />
+  </head>
+  <body class="flex h-full flex-col">
+    <SiteHeader />
+    <main class="" transition:animate="slide">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>
