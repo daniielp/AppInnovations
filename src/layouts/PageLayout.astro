@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import LoadScripts from "../components/LoadScripts.astro";
+import '@fontsource-variable/inter'
 
 const { title, description} = Astro.props;
 
@@ -19,7 +20,7 @@ export interface Props {
     <BaseHead title={title} description={description}  />
     <LoadScripts />
   </head>
-  <body class="flex h-full flex-col">
+  <body class="flex h-full flex-col font-sans">
     <SiteHeader />
     <main class="" transition:animate="slide">
       <slot />
