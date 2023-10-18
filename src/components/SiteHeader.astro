@@ -310,15 +310,15 @@ const top = await getCollection("top");
           id="top"
           class="absolute hidden -left-8 top-full z-10 mt-3 w-56 rounded-xl bg-white p-2 shadow-lg ring-1 ring-gray-900/5"
         >
+		{top.map((entry) => (
+			<a href={`/top/${entry.slug}`} class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">
+				{entry.data.title}
+			</a>
+		))}
           <a
             href="/#"
             class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
             >Top 10 Designprincipper der Skaber Fantastiske Mobile Apps</a
-          >
-          <a
-            href="/#"
-            class="block rounded-lg px-3 py-2 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
-            >Top 10 værktøjer som ingen app designer kan undvære</a
           >
           <a
             href="/#"
@@ -468,7 +468,7 @@ const top = await getCollection("top");
                 aria-controls="howitsmade-1"
                 aria-expanded="false"
               >
-                Hvordan det lavet
+                Hvordan er det lavet
                 <svg
                   class="h-5 w-5 flex-none"
                   viewBox="0 0 20 20"
